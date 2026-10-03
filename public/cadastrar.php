@@ -1,6 +1,6 @@
 <?php
 
-include "..infra/conexao.php";
+include "../infra/conexao.php";
 
 $nome = $_POST["nome"];
 $categoria = $_POST["categoria"];
@@ -12,7 +12,7 @@ $sql = "INSERT INTO produto (nome, categoria, descricao, quantidade, validade) V
 
 $stmt = mysqli_prepare($conexao, $sql);
 
-mysqli_stmt_bind_param($stmt, "sssii", $nome, $categoria, $descricao, $quantidade, $validade);
+mysqli_stmt_bind_param($stmt, "sssis", $nome, $categoria, $descricao, $quantidade, $validade);
 
 mysqli_stmt_execute($stmt);
 

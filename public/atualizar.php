@@ -12,7 +12,7 @@ $validade = $_POST["validade"];
 $sql = "UPDATE produto SET nome = ?, categoria = ?, descricao = ?, quantidade = ?, validade = ? WHERE id = ?";
 $stmt = $conexao->prepare($sql);
 
-$stmt->bind_param("sssiii", $nome, $categoria, $descricao, $quantidade, $validade, $id);
+$stmt->bind_param("sssisi", $nome, $categoria, $descricao, $quantidade, $validade, $id);
 
 $stmt->execute();
 header("Location: ../index.php");

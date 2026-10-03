@@ -1,6 +1,6 @@
 <?php
 
-include "..infra/conexao.php";
+include "../infra/conexao.php";
 
 $id = $_GET["id"];
 $sql = "SELECT * FROM produto WHERE id = $id";

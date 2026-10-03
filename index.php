@@ -1,3 +1,10 @@
+<?php
+
+include "infra/conexao.php";
+$produto = mysqli_query($conexao, "SELECT * FROM produto");
+
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
