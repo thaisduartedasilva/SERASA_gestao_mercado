@@ -17,7 +17,7 @@
                 <th>Nome<th>
                 <th>Categoria<th>
                 <th>Descrição<th>
-                <th>Quantidade<th>
+                <th>Quantidade em estoque<th>
                 <th>Validade<th>
             </tr>
             <?php while($produtos = mysqli_fetch_assoc($produto)){ ?>
@@ -47,7 +47,7 @@
             <label for="descricao">Descrição: </label>
             <input type="text" name="descricao">
             <br>
-            <label for="quantidade">Quantidade: </label>
+            <label for="quantidade">Quantidade em estoque: </label>
             <input type="text" name="quantidade">
             <br>
             <label for="validade">Validade: </label>
