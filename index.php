@@ -36,8 +36,25 @@
             <?php } ?>
         </table>
 
-
-
+        <h2>Cadastrar um Novo Produto no Estoque:</h2>
+        <form action="public/cadastrar.php" method="POST">
+            <label for="nome">Nome: </label>
+            <input type="text" name="nome">
+            <br>
+            <label for="categoria">Categoria: </label>
+            <input type="text" name="categoria">
+            <br>
+            <label for="descricao">Descrição: </label>
+            <input type="text" name="descricao">
+            <br>
+            <label for="quantidade">Quantidade: </label>
+            <input type="text" name="quantidade">
+            <br>
+            <label for="validade">Validade: </label>
+            <input type="text" name="validade">
+            <br>
+            <button type="submit">Cadastrar</button>
+        </form>
     </main>
     
 </body>
