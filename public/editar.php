@@ -23,7 +23,7 @@ $produtos = mysqli_fetch_assoc($resultado);
 
 <body>
     <header>
-        <h1>Editar Produto</h1>
+        <h1>Editar Produto:</h1>
     </header>
     <main>
         <form action="atualizar.php" method="POST">
@@ -43,7 +43,7 @@ $produtos = mysqli_fetch_assoc($resultado);
             <label for="validade">Validade: </label>
             <input type="date" name="validade" value="<?php echo $produtos["validade"] ?>">
             <br>
-            <label for="preco">Preço: </label>
+            <label for="preco">Preço: R$</label>
             <input type="number" name="preco" value="<?php echo $produtos["preco"] ?>">
             <br>
             <button type="submit">Atualizar</button>

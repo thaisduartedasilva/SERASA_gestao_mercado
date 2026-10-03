@@ -17,7 +17,7 @@ $produto = mysqli_query($conexao, "SELECT * FROM produto");
         <h1>Gestão de Estoque</h1>
     </header>
     <main>
-        <h2>Produtos Cadastrados no Estoque</h2>
+        <h2>Produtos Cadastrados no Estoque:</h2>
         <table>
             <tr>
                 <th>ID</th>
@@ -62,7 +62,7 @@ $produto = mysqli_query($conexao, "SELECT * FROM produto");
             <label for="validade">Validade: </label>
             <input type="date" name="validade">
             <br>
-            <label for="preco">Preço: </label>
+            <label for="preco">Preço: R$</label>
             <input type="number" name="preco">
             <br>
             <button type="submit">Cadastrar</button>
