@@ -10,3 +10,8 @@ CREATE TABLE produto(
     validade DATE NOT NULL,
     preco FLOAT NOT NULL
 );
+
+INSERT INTO produto (nome, categoria, descricao, quantidade, validade, preco) VALUES
+('feijão', 'alimento', 'feijão preto', '20', '2027/02/10', '30'),
+('macarrão', 'alimento', 'macarrão 500g', '90', '2027/05/11', '70'),
+('sabão', 'limpesa', 'sabão liquido', '50', '2028/10/01', '3');
