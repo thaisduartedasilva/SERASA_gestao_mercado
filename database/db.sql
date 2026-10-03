@@ -7,5 +7,6 @@ CREATE TABLE produto(
     categoria VARCHAR(250) NOT NULL,
     descricao VARCHAR(1000) NOT NULL,
     quantidade INT NOT NULL,
-    validade DATE NOT NULL
+    validade DATE NOT NULL,
+    preco FLOAT NOT NULL
 );

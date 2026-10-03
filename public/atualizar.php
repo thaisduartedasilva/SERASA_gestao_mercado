@@ -8,11 +8,12 @@ $categoria = $_POST["categoria"];
 $descricao = $_POST["descricao"];
 $quantidade = $_POST["quantidade"];
 $validade = $_POST["validade"];
+$preco = $_POST["preco"];
 
-$sql = "UPDATE produto SET nome = ?, categoria = ?, descricao = ?, quantidade = ?, validade = ? WHERE id = ?";
+$sql = "UPDATE produto SET nome = ?, categoria = ?, descricao = ?, quantidade = ?, validade = ?, preco = ? WHERE id = ?";
 $stmt = $conexao->prepare($sql);
 
-$stmt->bind_param("sssisi", $nome, $categoria, $descricao, $quantidade, $validade, $id);
+$stmt->bind_param("sssisii", $nome, $categoria, $descricao, $quantidade, $validade, $preco, $id);
 
 $stmt->execute();
 header("Location: ../index.php");

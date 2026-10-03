@@ -3,9 +3,13 @@
 include "../infra/conexao.php";
 
 $id = $_GET["id"];
-$sql = "SELECT * FROM produto WHERE id = $id";
 
-$resultado = mysqli_query($conexao, $sql);
+$sql = "SELECT * FROM produto WHERE id = ?";
+$stmt = mysqli_prepare($conexao, $sql);
+mysqli_stmt_bind_param($stmt, "i", $id);
+mysqli_stmt_execute($stmt);
+
+$resultado = mysqli_stmt_get_result($stmt);
 $produtos = mysqli_fetch_assoc($resultado);
 
 ?>
@@ -34,10 +38,13 @@ $produtos = mysqli_fetch_assoc($resultado);
             <input type="text" name="descricao" value="<?php echo $produtos["descricao"] ?>">
             <br>
             <label for="quantidade">Quantidade no Estoque: </label>
-            <input type="text" name="quantidade" value="<?php echo $produtos["quantidade"] ?>">
+            <input type="number" name="quantidade" value="<?php echo $produtos["quantidade"] ?>">
             <br>
             <label for="validade">Validade: </label>
-            <input type="text" name="validade" value="<?php echo $produtos["validade"] ?>">
+            <input type="date" name="validade" value="<?php echo $produtos["validade"] ?>">
+            <br>
+            <label for="preco">Preço: </label>
+            <input type="number" name="preco" value="<?php echo $produtos["preco"] ?>">
             <br>
             <button type="submit">Atualizar</button>
         </form>

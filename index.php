@@ -20,12 +20,13 @@ $produto = mysqli_query($conexao, "SELECT * FROM produto");
         <h2>Produtos Cadastrados no Estoque</h2>
         <table>
             <tr>
-                <th>ID<th>
-                <th>Nome<th>
-                <th>Categoria<th>
-                <th>Descrição<th>
-                <th>Quantidade em estoque<th>
-                <th>Validade<th>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Descrição</th>
+                <th>Quantidade em estoque</th>
+                <th>Validade</th>
+                <th>Preço</th>
             </tr>
             <?php while($produtos = mysqli_fetch_assoc($produto)){ ?>
                 <tr>
@@ -35,6 +36,7 @@ $produto = mysqli_query($conexao, "SELECT * FROM produto");
                     <td><?php echo $produtos["descricao"] ?></td>
                     <td><?php echo $produtos["quantidade"] ?></td>
                     <td><?php echo $produtos["validade"] ?></td>
+                    <td><?php echo $produtos["preco"] ?></td>
                     <td>
                         <a href="public/editar.php?id=<?php echo $produtos["id"] ?>">Editar</a>
                         <a href="public/excluir.php?id=<?php echo $produtos["id"] ?>">Excluir</a>
@@ -58,7 +60,10 @@ $produto = mysqli_query($conexao, "SELECT * FROM produto");
             <input type="number" name="quantidade">
             <br>
             <label for="validade">Validade: </label>
-            <input type="number" name="validade">
+            <input type="date" name="validade">
+            <br>
+            <label for="preco">Preço: </label>
+            <input type="number" name="preco">
             <br>
             <button type="submit">Cadastrar</button>
         </form>
