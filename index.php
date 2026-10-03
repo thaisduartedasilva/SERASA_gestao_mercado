@@ -48,10 +48,10 @@
             <input type="text" name="descricao">
             <br>
             <label for="quantidade">Quantidade em estoque: </label>
-            <input type="text" name="quantidade">
+            <input type="number" name="quantidade">
             <br>
             <label for="validade">Validade: </label>
-            <input type="text" name="validade">
+            <input type="number" name="validade">
             <br>
             <button type="submit">Cadastrar</button>
         </form>
